@@ -21,6 +21,7 @@ public class Spawn : MonoBehaviour {
 	}
     void SpawnAgent()
     {
+
         GameObject agent = (GameObject)Instantiate(navableAgent, this.transform.position, Quaternion.identity);
         agent.GetComponent<AICharacterControl>().target = initialDestination.transform;
         spawnCount++;
@@ -32,6 +33,7 @@ public class Spawn : MonoBehaviour {
         {
             gameObject.transform.Translate(-3f, 0f, -450f);
         }
+
         Invoke("SpawnAgent", 0);
     }
 }
