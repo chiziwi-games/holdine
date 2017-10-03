@@ -24,6 +24,7 @@ public class Spawn : MonoBehaviour {
 
         GameObject agent = (GameObject)Instantiate(navableAgent, this.transform.position, Quaternion.identity);
         agent.GetComponent<AICharacterControl>().target = initialDestination.transform;
+        agent.GetComponentInChildren<Canvas>().gameObject.SetActive(true);
         spawnCount++;
         if (spawnCount >= spawnLimit) {
             Destroy(gameObject);
